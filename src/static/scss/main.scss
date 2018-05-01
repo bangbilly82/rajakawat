@@ -1,0 +1,23 @@
+@import './partials/_variables.scss';
+@import './partials/_header.scss';
+
+.homepage-container {
+  background-image: url('../images/homepage.png');
+  background-size: cover;
+  .overlay {
+    padding: 20rem 6rem 3rem 6rem;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    h1 {
+      color: #fff;
+    }
+    hr {
+      width: 100px;
+      border: 2px solid #fff;
+      margin-bottom: 3rem;
+    }
+    p {
+      line-height: 1.8;
+    }
+  }
+}
