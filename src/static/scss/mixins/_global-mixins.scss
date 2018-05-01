@@ -1,0 +1,18 @@
+@mixin button-primary {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #D67A3D;
+  opacity: 1;
+  height: 40px;
+  padding: 0 15px;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  transition: 0.3s all ease-in;
+  &:hover {
+    opacity: 1;
+  }
+}

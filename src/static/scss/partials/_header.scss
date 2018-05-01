@@ -3,19 +3,41 @@
   top: 0;
   width: 100%;
   z-index: 999;
-  padding: 3rem 4rem;
+  padding: 3rem 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.3s all ease-in;
+  &.is-shadowed {
+    box-shadow: 1px 2px 15px rgba(0,0,0,0.1);
+  }
   .item {
+    .logo {
+      position: relative;
+      top: 5px;
+    }
     .menu, .social-media {
+      &.is-not-transparent {
+        a {
+          color: #333;
+        }
+      }
       a {
-        margin-right: 1.5rem;
+        margin-right: 2rem;
         text-transform: uppercase;
         color: #fff;
+        font-size: 1.1rem;
+        &:hover {
+          font-weight: 700;
+        }
         &:last-child {
           margin-right: 0;
         }
+      }
+    }
+    .social-media {
+      a {
+        font-size: 1.3rem;
       }
     }
   }
