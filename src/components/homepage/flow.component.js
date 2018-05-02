@@ -14,7 +14,7 @@ class Flow extends Component {
       <section className="flow-container">
         <div className="columns">
           <div className="column left-container">
-            <div className="columns is-multiline">
+            <div className="columns is-multiline is-variable is-1">
               <div className="column is-full">
                 <img src={Flow1}/>
               </div>

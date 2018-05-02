@@ -16,7 +16,6 @@ h1,h2,h3,h4,h5,h6,p,a {
 }
 
 .homepage-container {
-  // background-image: url('../images/homepage.png');
   background-size: cover;
   .overlay {
     padding: 20rem 10rem 8rem 10rem;
@@ -89,25 +88,44 @@ h1,h2,h3,h4,h5,h6,p,a {
     margin-bottom: 2rem;
   }
   .button-more {
+    margin-top: 2rem;
     text-align: center;
   }
   .column {
     text-align: center;
     position: relative;
-    div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      h5 {
-        color: #fff;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 1.5rem;
+    margin-bottom: -1rem;
+    a {
+      .image-thumbnail {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          transition: 0.3s all;
+        }
+        .title {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(0,0,0,0.2);
+          h5 {
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+          }
+        }
+      }
+      &:hover {
+        img {
+          transform: scale(1.03,1.03);
+        }
       }
     }
   }
@@ -118,6 +136,9 @@ h1,h2,h3,h4,h5,h6,p,a {
   background: #f5f5f5;
   .left-container {
     padding-right: 5rem;
+    .column {
+      margin-bottom: -1.3rem;
+    }
   }
   h3 {
     text-transform: uppercase;
