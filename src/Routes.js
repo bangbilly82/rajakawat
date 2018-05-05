@@ -10,7 +10,7 @@ class Routes extends Component {
 
   render() {
     return ( 
-      <div className="global-wrapper">
+      <div className="global-wrapper container is-fullhd">
         <Header background="transparent"/>
         <Route exact path="/" component={HomePage}/>
         <Route path="/service" component={ServicePage}/>
