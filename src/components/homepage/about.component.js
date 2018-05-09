@@ -5,7 +5,8 @@ class About extends Component {
   render() {
     return (
       <section className="about-container">
-        <h3 className="title is-3">Lorem <span>Ipsum</span></h3>
+        {/* <h3 className="title is-3">Lorem <span>Ipsum</span></h3> */}
+        <h3 className="title is-3">AFTER UBER LEAVES, NEW RIVALS EMERGE</h3>
         <hr />
         <div className="columns">
           <div className="column">

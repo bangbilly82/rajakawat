@@ -1,5 +1,23 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import * as actionCreators from '../../action-creator/index';
+import Config from '../../config/config';
 import Logo from '../../static/images/icon/rajakawat-logo.png';
+
+const mapStateToProps = (state) => {
+  return {
+    link: state.header.link
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCurrentHeader: (value) => {
+      dispatch(actionCreators.setCurrentHeader(value));
+    }
+  }
+}
 
 class Header extends Component {
 
@@ -7,7 +25,8 @@ class Header extends Component {
     super(props);
     this.state = {
       color: null,
-      isTransparent: true
+      isTransparent: true,
+      header: Config.header
     }
   }
   
@@ -16,17 +35,36 @@ class Header extends Component {
   }
 
   handleScroll() {
-    if (window.pageYOffset > 230) {
+    if (window.pageYOffset > 150) {
       this.setState({
         color: '#fff',
         isTransparent: false
       });
-    } else if (window.pageYOffset < 230) {
+    } else if (window.pageYOffset < 150) {
       this.setState({
         color: null,
         isTransparent: true
       });
     }
+  }
+
+  generateHeaderLink() {
+    const { link: currentLink } = this.props;
+    const { header } = this.state;
+    let links;
+    links = header.map((link, index) => {
+      const active = {
+        fontWeight: '700'
+      };
+      return (
+        <Link to={link.path} style={(currentLink === link.path) ? active : null} key={index}>{link.name}</Link>
+      );
+    })
+    return links;
+  }
+
+  setCurrentHeader(value) {
+    this.props.setCurrentHeader(value);
   }
 
   render() {
@@ -41,16 +79,12 @@ class Header extends Component {
         <div className={"header " + ((isTransparent) ? null : 'is-shadowed')} style={style}>
           <div className="item">
             <div className="logo">
-              <img src={Logo} width={((isTransparent) ? '200px' : '150px')}/>
+              <Link to={"/"}><img src={Logo} width={((isTransparent) ? '150px' : '100px')}/></Link>
             </div>
           </div>
           <div className="item">
             <div className={'menu ' + ((isTransparent) ? null : 'is-not-transparent')}>
-              <a href={"/"}>Home</a>
-              <a href={"/service"}>Service</a>
-              <a href={"/workflow"}>Work Flow</a>
-              <a>Contact Us</a>
-              <a>FAQ</a>
+              {this.generateHeaderLink()}
             </div>
           </div>
           <div className="item">
@@ -66,4 +100,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

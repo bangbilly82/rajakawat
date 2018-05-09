@@ -6,3 +6,10 @@ export function getBlogContent(posts) {
     posts
   }
 }
+
+export function setCurrentHeader(link) {
+  return {
+    type: Actions.SET_CURRENT_HEADER,
+    link
+  }
+}

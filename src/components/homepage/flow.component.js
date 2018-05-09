@@ -9,6 +9,10 @@ import Flow3 from '../../static/images/flow-3.png';
 
 class Flow extends Component {
 
+  handleClick() {
+    alert('button clicked');
+  }
+
   render() {
     return (
       <section className="flow-container">
@@ -27,7 +31,7 @@ class Flow extends Component {
             </div>
           </div>
           <div className="column">
-            <h3 className="title is-3">Lorem <span>Ipsum</span></h3>
+            <h3 className="title is-3">Our <span>Work Flow</span></h3>
             <hr />
             <p>
               Washington (CNN)Special counsel Robert Mueller is interested in asking President Donald Trump a variety of questions related to the 2016 campaign and people who have figured in Trump's personal life
@@ -40,7 +44,7 @@ class Flow extends Component {
             <p className="sub-text">
               Washington (CNN)Special counsel Robert Mueller is interested in asking President Donald Trump a variety 
             </p>
-            <Button text="view working flow" uppercase/>
+            <Button text="view working flow" uppercase clickHandler={this.handleClick}/>
           </div>
         </div>
       </section>

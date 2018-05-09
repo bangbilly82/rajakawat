@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Button from '../../components/shared/button.component';
+import { connect } from "react-redux";
+import * as actionCreators from '../../action-creator/index';
 import Hero from '../../components/homepage/hero.component';
 import About from '../../components/homepage/about.component';
 import Service from '../../components/homepage/service.component';
@@ -7,26 +8,51 @@ import Work from '../../components/homepage/work.component';
 import Flow from '../../components/homepage/flow.component';
 import Contact from '../../components/contact/contact.component';
 
+const mapStateToProps = (state) => {
+  return {
+    link: state.header.link
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCurrentHeader: (value) => {
+      dispatch(actionCreators.setCurrentHeader(value));
+    }
+  }
+}
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'Lorem Ipsum',
-      text: 'Washington (CNN) Special counsel Robert Mueller is interested in asking President Donald Trump a variety of questions related to the 2016 campaign and people who have figured in Trump\'s personal life'
+      title: 'Iflix launches free video streaming with ads as providers adapt to local market demands',
+      text: 'While regulators across Southeast Asia worry about Grab’s virtual monopoly on the ride-hailing market after Uber’s departure, the reality is that it isn’t the only game in town.'
     }
   }
+
+  componentWillMount() {
+    this.props.setCurrentHeader(this.props.location.pathname);
+    this.resetScroll();
+    document.title = 'Homepage';
+  }
+
+  resetScroll() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div className="container is-fullhd">
-        <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage'}/>
+        <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage-9.jpg'}/>
         <About />
         <Service />
         <Work />
         <Flow />
-        <Contact title={this.state.title + ' dolor'} text={this.state.text}/>
+        <Contact title={'Tell us what you need'} text={this.state.text}/>
       </div>
     );
   }
 }
 
-export default HomePage;
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

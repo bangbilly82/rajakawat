@@ -5,6 +5,7 @@ import Footer from './components/footer/footer.component';
 import HomePage from './pages/homepage/homepage.pages';
 import ServicePage from './pages/servicepage/servicepage.pages';
 import WorkFlowPage from './pages/workflowpage/workflowpage.pages';
+import Scroller from './components/shared/scroller.component';
 
 class Routes extends Component {
 
@@ -16,6 +17,7 @@ class Routes extends Component {
         <Route path="/service" component={ServicePage}/>
         <Route path="/workflow" component={WorkFlowPage}/>
         <Footer />
+        <Scroller />
       </div>
     );
   }
