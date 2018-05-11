@@ -12,12 +12,12 @@ export default class Contentful {
     return client;
   }
 
-  static getBlogPost() {
+  static getFaqContent() {
     const client = this.setClient();
-    const blogPost = new Promise(
+    const faqContent = new Promise(
       function (resolve, reject) {
         client.getEntries({
-            content_type: 'blogPost',
+            content_type: 'faq',
             order: '-sys.createdAt',
             include: 2
           })
@@ -29,17 +29,17 @@ export default class Contentful {
           });
       }
     );
-    return blogPost;
+    return faqContent;
   }
 
-  static getTenant(category) {
+  static getPostContent() {
     const client = this.setClient();
-    const tenant = new Promise(
+    const postContent = new Promise(
       function (resolve, reject) {
         client.getEntries({
-            content_type: 'tenant',
+            content_type: 'post',
             order: '-sys.createdAt',
-            'fields.category[in]': category
+            include: 2
           })
           .then((entries) => {
             resolve(entries.items);
@@ -49,7 +49,7 @@ export default class Contentful {
           });
       }
     );
-    return tenant;
+    return postContent;
   }
 
   static getBlogPostBySlug(slug) {
@@ -69,25 +69,6 @@ export default class Contentful {
       }
     );
     return blogPostById;
-  }
-
-  static getTenantDetailBySlug(slug) {
-    const client = this.setClient();
-    const tenant = new Promise(
-      function (resolve, reject) {
-        client.getEntries({
-          content_type: 'tenant',
-          'fields.slug[in]': slug
-        })
-          .then((entries) => {
-            resolve(entries);
-          }, (err) => {
-            var reason = new Error('Error getting data!');
-            reject(reason);
-          });
-      }
-    );
-    return tenant;
   }
 
 }

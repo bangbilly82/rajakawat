@@ -7,7 +7,8 @@ import Logo from '../../static/images/icon/rajakawat-logo.png';
 
 const mapStateToProps = (state) => {
   return {
-    link: state.header.link
+    link: state.header.link,
+    backgroundColor: state.header.background
   };
 };
 
@@ -54,7 +55,8 @@ class Header extends Component {
     let links;
     links = header.map((link, index) => {
       const active = {
-        fontWeight: '700'
+        fontWeight: '700',
+        borderBottom: '2px solid #aaa'
       };
       return (
         <Link to={link.path} style={(currentLink === link.path) ? active : null} key={index}>{link.name}</Link>
@@ -68,10 +70,10 @@ class Header extends Component {
   }
 
   render() {
-    const { background } = this.props;
+    const { backgroundColor } = this.props;
     const { color, isTransparent } = this.state;
     const style = {
-      background: (color === null) ? background : color,
+      background: (color === null) ? backgroundColor : color,
       padding: (isTransparent) ? null : '1rem 6rem'
     }
     return (

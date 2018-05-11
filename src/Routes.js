@@ -5,7 +5,9 @@ import Footer from './components/footer/footer.component';
 import HomePage from './pages/homepage/homepage.pages';
 import ServicePage from './pages/servicepage/servicepage.pages';
 import WorkFlowPage from './pages/workflowpage/workflowpage.pages';
+import FaqPage from './pages/faqpage/faqpage.pages';
 import Scroller from './components/shared/scroller.component';
+import Loader from './components/shared/loader.component';
 
 class Routes extends Component {
 
@@ -16,8 +18,10 @@ class Routes extends Component {
         <Route exact path="/" component={HomePage}/>
         <Route path="/service" component={ServicePage}/>
         <Route path="/workflow" component={WorkFlowPage}/>
+        <Route path="/faq" component={FaqPage}/>
         <Footer />
         <Scroller />
+        <Loader />
       </div>
     );
   }

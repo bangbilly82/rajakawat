@@ -10,12 +10,14 @@ class Loader extends Component {
   }
 
   render() {
+    const { loading } = this.props;
     return (
+      (loading) ? 
       <div className="loader-container">
         <div className="loader-gif">
           <img src={require('../../static/images/loader.gif')}/>
         </div>
-      </div>
+      </div> : null
     );
   }
 }

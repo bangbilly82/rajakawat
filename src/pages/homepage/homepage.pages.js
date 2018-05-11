@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import * as actionCreators from '../../action-creator/index';
+import HeadTag from '../../utils/HeadTag';
 import Hero from '../../components/homepage/hero.component';
 import About from '../../components/homepage/about.component';
 import Service from '../../components/homepage/service.component';
@@ -18,6 +19,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setCurrentHeader: (value) => {
       dispatch(actionCreators.setCurrentHeader(value));
+    },
+    setHeaderBackground: (background) => {
+      dispatch(actionCreators.setHeaderBackground(background));
     }
   }
 }
@@ -33,8 +37,8 @@ class HomePage extends Component {
 
   componentWillMount() {
     this.props.setCurrentHeader(this.props.location.pathname);
+    this.props.setHeaderBackground('transparent');
     this.resetScroll();
-    document.title = 'Homepage';
   }
 
   resetScroll() {
@@ -43,13 +47,16 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="container is-fullhd">
-        <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage-9.jpg'}/>
-        <About />
-        <Service />
-        <Work />
-        <Flow />
-        <Contact title={'Tell us what you need'} text={this.state.text}/>
+      <div>
+        <HeadTag title={'Raja Kawat - Homepage'}/>
+        <div className="container is-fullhd">
+          <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage-9.jpg'}/>
+          <About />
+          <Service />
+          <Work />
+          <Flow />
+          <Contact title={'Tell us what you need'} text={this.state.text}/>
+        </div>
       </div>
     );
   }

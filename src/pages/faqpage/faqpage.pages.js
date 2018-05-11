@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import * as actionCreators from '../../action-creator/index';
 import HeadTag from '../../utils/HeadTag';
 import Hero from '../../components/homepage/hero.component';
-import ServiceDetail from '../../components/service/detail.component';
+import Faq from '../../components/faq/faq.component';
 import Blog from '../../components/blog/blog.component';
 
 const mapStateToProps = (state) => {
   return {
     link: state.header.link,
-    posts: state.post.content
+    faqContent: state.faq.content
   };
 };
 
@@ -21,16 +21,13 @@ const mapDispatchToProps = (dispatch) => {
     setHeaderBackground: (background) => {
       dispatch(actionCreators.setHeaderBackground(background));
     },
-    getPost: () => {
-      dispatch(actionCreators.getPost());
-    },
-    hideLoader: () => {
-      dispatch(actionCreators.hideLoader())
+    getFaq: () => {
+      dispatch(actionCreators.getFaq());
     }
   }
 }
 
-class WorkFlowPage extends Component {
+class FaqPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,37 +38,35 @@ class WorkFlowPage extends Component {
 
   componentWillMount() {
     this.props.setCurrentHeader(this.props.location.pathname);
-    this.props.setHeaderBackground('transparent');
-    this.props.getPost()
+    this.props.setHeaderBackground('black');
+    this.props.getFaq();
     this.resetScroll();
+  }
+
+  generateFaq() {
+    const { faqContent } = this.props;
+    if (faqContent) {
+      const props = faqContent.fields;
+      return (
+        <Faq {...props} />
+      );
+    }
   }
 
   resetScroll() {
     window.scrollTo(0, 0);
   }
 
-  generatePost() {
-    const { posts } = this.props;
-    if (posts) {
-      // this.props.hideLoader();
-      return (
-        <Blog posts={posts} />
-      );
-    }
-  }
-
   render() {
     return (
       <div>
-        <HeadTag title={'Raja Kawat - Workflow'}/>
+        <HeadTag title={'Raja Kawat - FAQ'}/>
         <div className="container is-fullhd">
-          <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage-10.png'}/>
-          <ServiceDetail />
-          {this.generatePost()}
+          {this.generateFaq()}
         </div>
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WorkFlowPage);
+export default connect(mapStateToProps, mapDispatchToProps)(FaqPage);

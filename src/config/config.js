@@ -17,11 +17,11 @@ module.exports = {
       name: 'Work Flow'
     },
     {
-      path: '/',
+      path: '/contact-us',
       name: 'Contact Us'
     },
     {
-      path: '/',
+      path: '/faq',
       name: 'Faq'
     }
   ]

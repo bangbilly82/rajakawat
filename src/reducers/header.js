@@ -1,7 +1,8 @@
 import * as Actions from '../actions/Actions';
 
 const initialState = {
-  link: 'Home'
+  link: 'Home',
+  background: 'transparent'
 };
 
 function header(state = initialState, action = null) {
@@ -10,6 +11,11 @@ function header(state = initialState, action = null) {
       return {
         ...state,
         link: action.link
+      }
+    case Actions.SET_HEADER_BACKGROUND:
+      return {
+        ...state,
+        background: action.background
       }
     default:
       return state;
