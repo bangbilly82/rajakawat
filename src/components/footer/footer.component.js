@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Media from "react-media";
 
 class Footer extends Component {
 
-  render() {
+  generateContent(isMobile = false) {
     return (
       <div className="container is-fullhd">
-        <div className="footer">
+        <div className={"footer " + ((isMobile) ? 'is-mobile' : null)}>
           <div className="item">
             <label>Copyright 2018 Raja Kawat</label>
             <p>Designed by Studibrandinc</p>
@@ -16,6 +17,20 @@ class Footer extends Component {
           </div>
         </div>
       </div>
+    )
+  }
+
+  render() {
+    return (
+      <Media query="(max-width: 420px)">
+        {matches =>
+          matches ? (
+            this.generateContent(true)
+          ) : (
+            this.generateContent()
+          )
+        }
+      </Media>
     );
   }
 }

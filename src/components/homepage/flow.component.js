@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../shared/button.component';
+import Media from "react-media";
 import IconFlow1 from '../../static/images/icon/icon-flow-1.png';
 import IconFlow2 from '../../static/images/icon/icon-flow-2.png';
 import IconFlow3 from '../../static/images/icon/icon-flow-3.png';
@@ -13,9 +14,9 @@ class Flow extends Component {
     alert('button clicked');
   }
 
-  render() {
+  generateContent(isMobile = false) {
     return (
-      <section className="flow-container">
+      <section className={"flow-container " + ((isMobile) ? 'is-mobile' : null)}>
         <div className="columns">
           <div className="column left-container">
             <div className="columns is-multiline is-variable is-1">
@@ -48,6 +49,20 @@ class Flow extends Component {
           </div>
         </div>
       </section>
+    )
+  }
+
+  render() {
+    return (
+      <Media query="(max-width: 420px)">
+        {matches =>
+          matches ? (
+            this.generateContent(true)
+          ) : (
+            this.generateContent()
+          )
+        }
+      </Media>
     );
   }
 }

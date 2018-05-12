@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
+import Media from "react-media";
 import WorksHelper from '../../utils/WorksHelper';
 
 class Blog extends Component {
@@ -43,18 +44,29 @@ class Blog extends Component {
     return post;
   }
 
-  render() {
-    const style = {
-      'text-align': this.props.alignment
-    }
+  generateContent(isMobile = false) {
     return (
-      <section className="blog-container">
+      <section className={"blog-container " + ((isMobile) ? 'is-mobile' : null)}>
         <h3 className="title is-3">Our <span>Blog</span></h3>
         <hr/>
         <div className="columns is-variable is-1 is-multiline">
           {this.generateThumbnail()}
         </div>
       </section>
+    )
+  }
+
+  render() {
+    return (
+      <Media query="(max-width: 420px)">
+        {matches =>
+          matches ? (
+            this.generateContent(true)
+          ) : (
+            this.generateContent()
+          )
+        }
+      </Media>
     );
   }
 }

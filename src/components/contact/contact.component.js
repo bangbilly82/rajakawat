@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import Media from "react-media";
 import ContactForm from './contactForm.component';
 
 class Contact extends Component {
 
-  render() {
+  generateContent(isMobile = false) {
     const style = {
       textAlign: this.props.alignment
     }
     return (
-      <section className="contact-container">
+      <section className={"contact-container " + ((isMobile) ? 'is-mobile' : null)}>
         <div className="overlay" style={style}>
           <div className="columns">
             <div className="column is-7 contact-heading">
@@ -27,6 +28,20 @@ class Contact extends Component {
           </div>
         </div>
       </section>
+    );
+  }
+
+  render() {
+    return (
+      <Media query="(max-width: 420px)">
+        {matches =>
+          matches ? (
+            this.generateContent(true)
+          ) : (
+            this.generateContent()
+          )
+        }
+      </Media>
     );
   }
 }

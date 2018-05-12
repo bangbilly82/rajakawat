@@ -53,7 +53,6 @@ class WorkFlowPage extends Component {
   generatePost() {
     const { posts } = this.props;
     if (posts) {
-      // this.props.hideLoader();
       return (
         <Blog posts={posts} />
       );

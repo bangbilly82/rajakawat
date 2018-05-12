@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Media from "react-media";
 
 class Hero extends Component {
 
@@ -12,13 +13,27 @@ class Hero extends Component {
     }
     return (
       <section className="homepage-container" style={backgroundStyle}>
-        <div className="overlay" style={style}>
-          <h1 className="title is-1">{this.props.title}</h1>
-          <hr className={`${alignment}-alignment`}/>
-          <p>
-            {this.props.text}
-          </p>
-        </div>
+        <Media query="(max-width: 420px)">
+          {matches =>
+            matches ? (
+              <div className="overlay is-mobile" style={style}>
+                <h1 className="title is-1">{this.props.title}</h1>
+                <hr className={`${alignment}-alignment`}/>
+                <p>
+                  {this.props.text}
+                </p>
+              </div>
+            ) : (
+              <div className="overlay" style={style}>
+                <h1 className="title is-1">{this.props.title}</h1>
+                <hr className={`${alignment}-alignment`}/>
+                <p>
+                  {this.props.text}
+                </p>
+              </div>
+            )
+          }
+        </Media>
       </section>
     );
   }

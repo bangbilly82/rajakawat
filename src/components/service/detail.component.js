@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import Media from "react-media";
 
 class ServiceDetail extends Component {
 
-  render() {
+  generateContent(isMobile = false) {
     return (
-      <section className="service-detail-container">
-        {/* <h3 className="title is-3">Lorem <span>Ipsum</span></h3> */}
+      <section className={"service-detail-container " + ((isMobile) ? 'is-mobile' : null)}>
         <h3 className="title is-3">The most complete list of tech and startup events in Singapore</h3>
         <hr />
         <div className="columns">
@@ -27,6 +27,20 @@ class ServiceDetail extends Component {
           </div>
         </div>
       </section>
+    )
+  }
+
+  render() {
+    return (
+      <Media query="(max-width: 420px)">
+        {matches =>
+          matches ? (
+            this.generateContent(true)
+          ) : (
+            this.generateContent()
+          )
+        }
+      </Media>
     );
   }
 }

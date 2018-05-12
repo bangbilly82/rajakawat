@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Media from "react-media";
 import Button from '../shared/button.component';
 import WorksHelper from '../../utils/WorksHelper';
 
@@ -40,12 +41,9 @@ class Work extends Component {
     return work;
   }
 
-  render() {
-    const style = {
-      'text-align': this.props.alignment
-    }
+  generateContent(isMobile = false) {
     return (
-      <section className="work-container">
+      <section className={"work-container " + ((isMobile) ? 'is-mobile' : null)}>
         <h3 className="title is-3">Our <span>Works</span></h3>
         <hr/>
         <div className="columns is-variable is-1 is-multiline">
@@ -55,6 +53,20 @@ class Work extends Component {
           <Button text="View All Services" clickHandler={this.handleClick} uppercase/>
         </div>
       </section>
+    )
+  }
+
+  render() {
+    return (
+      <Media query="(max-width: 420px)">
+        {matches =>
+          matches ? (
+            this.generateContent(true)
+          ) : (
+            this.generateContent()
+          )
+        }
+      </Media>
     );
   }
 }

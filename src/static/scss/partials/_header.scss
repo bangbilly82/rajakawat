@@ -11,6 +11,10 @@
   &.is-shadowed {
     box-shadow: 1px 2px 15px rgba(0,0,0,0.1);
   }
+  &.is-mobile {
+    padding: 0;
+    flex-wrap: wrap;
+  }
   .item {
     .logo {
       position: relative;
