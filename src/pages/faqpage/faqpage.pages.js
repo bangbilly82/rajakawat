@@ -61,7 +61,7 @@ class FaqPage extends Component {
     return (
       <div>
         <HeadTag title={'Raja Kawat - FAQ'}/>
-        <div className="container is-fullhd">
+        <div>
           {this.generateFaq()}
         </div>
       </div>

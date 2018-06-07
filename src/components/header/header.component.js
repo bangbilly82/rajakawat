@@ -130,7 +130,7 @@ class Header extends Component {
     return (
       <div className={"header-mobile"}>
         <div className={"header-mobile__trigger " + ((isTransparent) ? null : 'is-shadowed')} style={style}>
-          <img src={Logo} width="100px"/>
+          <Link to={"/"}><img src={Logo} width="100px"/></Link>
           <span className="header-bars" onClick={this.showMobileMenu.bind(this)} style={((isTransparent) ? {color: '#fff'} : {color: '#333'})}>{(mobileShow) ? iconCross : iconBars}</span>
         </div>
         <div className={"header-mobile__off-canvas " + ((mobileShow) ? null : 'hide')}>
@@ -160,7 +160,7 @@ class Header extends Component {
       padding: (isTransparent) ? null : '1rem 6rem'
     }
     return (
-      <div className="container is-fullhd">
+      <div>
         <Media query="(max-width: 420px)">
           {matches =>
             matches ? (

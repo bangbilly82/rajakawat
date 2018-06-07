@@ -12,9 +12,11 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
-    img {
-      position: relative;
-      top: 2px;
+    a {
+      img {
+        position: relative;
+        top: 5px;
+      }
     }
   }
   &__off-canvas {

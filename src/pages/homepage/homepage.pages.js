@@ -30,7 +30,7 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'Iflix launches free video streaming with ads as providers adapt to local market demands',
+      title: 'Lorem Ipsum',
       text: 'While regulators across Southeast Asia worry about Grab’s virtual monopoly on the ride-hailing market after Uber’s departure, the reality is that it isn’t the only game in town.'
     }
   }
@@ -49,8 +49,8 @@ class HomePage extends Component {
     return (
       <div>
         <HeadTag title={'Raja Kawat - Homepage'}/>
-        <div className="container is-fullhd">
-          <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage-9.jpg'}/>
+        <div>
+          <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage.png'}/>
           <About />
           <Service />
           <Work />

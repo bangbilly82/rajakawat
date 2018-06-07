@@ -15,13 +15,13 @@ class ContactForm extends Component {
           <div className="control">
             <input className="input" type="text" placeholder="Your Name"/>
           </div>
-          <p className="help">This is a help text</p>
+          {/* <p className="help">This is a help text</p> */}
         </div>
         <div className="field">
           <div className="control">
             <input className="input" type="email" placeholder="Your Email"/>
           </div>
-          <p className="help">This is a help text</p>
+          {/* <p className="help">This is a help text</p> */}
         </div>
         <div className="field">
           <div className="control">

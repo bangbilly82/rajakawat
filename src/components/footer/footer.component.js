@@ -5,7 +5,7 @@ class Footer extends Component {
 
   generateContent(isMobile = false) {
     return (
-      <div className="container is-fullhd">
+      <div>
         <div className={"footer " + ((isMobile) ? 'is-mobile' : null)}>
           <div className="item">
             <label>Copyright 2018 Raja Kawat</label>
