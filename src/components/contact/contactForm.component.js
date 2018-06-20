@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
 import Button from '../shared/button.component';
 
 class ContactForm extends Component {
 
   handleClick() {
-    Axios.post('localhost:8080/send-email', {
-      sender: 'bill.billy.br@gmail.com',
-      subject: 'Business Opportunity',
-      text: 'Terimakasih telah menghubungi Raja Kawat! Ada yang bisa kami bantu ?'
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    console.log('submitted');
   }
 
   render() {
