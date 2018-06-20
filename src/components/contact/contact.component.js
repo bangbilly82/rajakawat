@@ -19,7 +19,7 @@ class Contact extends Component {
                 {this.props.text}
               </p>
               <p className="sub-text">
-                {this.props.text}
+                Anda bisa langsung menghubungi kami melalui form yang sudah tersedia
               </p>
             </div>
             <div className="column is-5 contact-form-container">

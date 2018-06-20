@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from '../shared/button.component';
 import Media from "react-media";
 import IconFlow1 from '../../static/images/icon/icon-flow-1.png';
 import IconFlow2 from '../../static/images/icon/icon-flow-2.png';
@@ -32,10 +31,10 @@ class Flow extends Component {
             </div>
           </div>
           <div className="column">
-            <h3 className="title is-3">Our <span>Work Flow</span></h3>
+            <h3 className="title is-3">How <span>We Works</span></h3>
             <hr />
             <p>
-              Washington (CNN)Special counsel Robert Mueller is interested in asking President Donald Trump a variety of questions related to the 2016 campaign and people who have figured in Trump's personal life
+              Tertarik untuk menggunakan jasa Raja Kawat? Ingin tahu bagaimana cara kerja kami?
             </p>
             <div className="flow-icon-container">
               <img src={IconFlow1} width="120px"/>
@@ -43,9 +42,11 @@ class Flow extends Component {
               <img src={IconFlow3} width="120px"/>
             </div>
             <p className="sub-text">
-              Washington (CNN)Special counsel Robert Mueller is interested in asking President Donald Trump a variety 
+              Sistem pengerjaan Raja Kawat dibuat untuk memberi kemudahan bagi customers kami 
             </p>
-            <Button text="view working flow" uppercase clickHandler={this.handleClick}/>
+            <a className="button-service" href="/workflow">
+              view detail working flow
+            </a>
           </div>
         </div>
       </section>

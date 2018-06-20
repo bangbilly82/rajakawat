@@ -44,8 +44,7 @@ export default class Contentful {
           .then((entries) => {
             resolve(entries.items);
           }, (err) => {
-            var reason = new Error('Error getting data!');
-            reject(reason);
+            reject(err);
           });
       }
     );

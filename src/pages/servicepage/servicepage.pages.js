@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actionCreators from '../../action-creator/index';
 import HeadTag from '../../utils/HeadTag';
 import Hero from '../../components/homepage/hero.component';
-import Work from '../../components/homepage/work.component';
+import Services from '../../components/service/service.component';
 
 const mapStateToProps = (state) => {
   return {
@@ -26,8 +26,8 @@ class ServicePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'Lorem Ipsum',
-      text: 'Razer has taken another step towards becoming one of Singapore’s major payments providers. The firm announced a partnership with Singtel that will see the two collaborate on fintech, gaming, and telecom.'
+      title: 'Our Services',
+      text: 'Raja Kawat memiliki berbagai services yang bisa Anda pilih, sesuai dengan kebutuhan.'
     }
   }
 
@@ -47,7 +47,7 @@ class ServicePage extends Component {
         <HeadTag title={'Raja Kawat - Service'}/>
         <div>
           <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage-4.png'}/>
-          <Work />
+          <Services />
         </div>
       </div>
     );

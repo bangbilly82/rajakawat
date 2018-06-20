@@ -6,20 +6,20 @@ class About extends Component {
   generateContent(isMobile = false) {
     return (
       <section className={"about-container " + ((isMobile) ? 'is-mobile' : null)}>
-        <h3 className="title is-3">AFTER UBER LEAVES, NEW RIVALS EMERGE</h3>
+        <h3 className="title is-3">Why <span>Us</span></h3>
         <hr />
         <div className="columns">
           <div className="column">
             <p>
-              Washington (CNN)Special counsel Robert Mueller is interested in asking President Donald Trump a variety of questions related to the 2016 campaign and people who have figured in Trump's personal life, business interactions and administration, according to Mueller's list of questions for Trump obtained and reported on by The New York Times.
+              Berdiri sejak tahun 1959, sudah lebih dari 50 tahun Raja Kawat telah membuktikan kualitas dan pengalamannya.
             </p>
             <p>
-              Washington (CNN)Special counsel Robert Mueller is interested in asking President Donald Trump a variety of questions related to the 2016 campaign and people who have figured in Trump's personal life, business interactions and administration, according to Mueller's list of questions for Trump obtained and reported on by The New York Times.
+              Raja Kawat senantiasa memperhatikan kualitas bahan yang digunakan di dalam setiap project.
             </p>
           </div>
           <div className="column">
             <p>
-              Washington (CNN)Special counsel Robert Mueller is interested in asking President Donald Trump a variety of questions related to the 2016 campaign and people who have figured in Trump's personal life, business interactions and administration, according to Mueller's list of questions for Trump obtained and reported on by The New York Times.
+              Tenaga kerja yang profesional, memastikan proses pengerjaan setiap project berjalan relatif lebih cepat. Sehingga customers bisa segera mendapatkan hasil akhir yang diinginkan.
             </p>
           </div>
         </div>

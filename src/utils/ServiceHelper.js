@@ -1,13 +1,13 @@
 module.exports = {
   services: [
     {
-      title: 'Perancangan'
+      title: 'Experienced'
     },
     {
-      title: 'Bengkel'
+      title: 'Quality'
     },
     {
-      title: 'Perbaikan'
+      title: 'Quick Process'
     }
   ]
 };

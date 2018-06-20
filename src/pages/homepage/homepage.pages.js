@@ -30,8 +30,8 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'Lorem Ipsum',
-      text: 'While regulators across Southeast Asia worry about Grab’s virtual monopoly on the ride-hailing market after Uber’s departure, the reality is that it isn’t the only game in town.'
+      title: 'Raja Kawat',
+      text: 'Raja Kawat adalah workshop yang dapat membantu Anda dalam membuat berbagai jenis barang dengan bahan dasar besi & metal'
     }
   }
 
@@ -55,7 +55,7 @@ class HomePage extends Component {
           <Service />
           <Work />
           <Flow />
-          <Contact title={'Tell us what you need'} text={this.state.text}/>
+          <Contact title={'Ready to work with us ?'} text={'Tertarik untuk menggunakan jasa Raja Kawat atau ingin mendapatkan informasi lebih detail tentang jasa Raja Kawat?'}/>
         </div>
       </div>
     );

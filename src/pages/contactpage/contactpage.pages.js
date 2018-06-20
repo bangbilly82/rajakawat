@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import Media from "react-media";
 import * as actionCreators from '../../action-creator/index';
 import HeadTag from '../../utils/HeadTag';
+import { sendEmail } from '../../middleware/api';
 import Maps from '../../components/shared/maps.component';
+import Loader from '../../components/shared/loader.component';
 
 const mapStateToProps = (state) => {
   return {
@@ -27,7 +29,11 @@ class ContactPage extends Component {
     super(props);
     this.state = {
       title: 'Startup bags funds from Singapore ex-minister to get ultra-wealthy into crowdlending',
-      text: 'Singapore-based Helicap is a new fintech platform that aims to bring a fund management angle in the peer-to-peer (P2P) lending space. To make this happen, it has raised US$1.5 million in seed funding.'
+      text: 'Singapore-based Helicap is a new fintech platform that aims to bring a fund management angle in the peer-to-peer (P2P) lending space. To make this happen, it has raised US$1.5 million in seed funding.',
+      sender: '',
+      email: '',
+      comment: '',
+      loading: false
     }
   }
 
@@ -43,12 +49,52 @@ class ContactPage extends Component {
     );
   }
 
+  handleNameChange(evt) {
+    this.setState({
+      sender: evt.target.value
+    });
+  }
+
+  handleEmailChange(evt) {
+    this.setState({
+      email: evt.target.value
+    });
+  }
+
+  handleCommentChange(evt) {
+    this.setState({
+      comment: evt.target.value
+    });
+  }
+
+  formSubmit(evt) {
+    evt.preventDefault();
+    const { sender, email, comment } = this.state;
+    const payload = {
+      sender: email,
+      subject: sender,
+      text: comment
+    };
+    this.setState({
+      loading: true
+    });
+    sendEmail(payload, () => {
+      this.setState({
+        sender: '',
+        email: '',
+        comment: '',
+        loading: false
+      });
+    });
+  }
+
   generateForm(isMobile = false) {
+    const { sender, email, comment } = this.state;
     return (
       <div className={"contact-us__form " + ((isMobile) ? 'is-mobile' : null)}>
         <div className="columns">
           <div className="column">
-            <h3 className="title is-3">Lorem <span>Ipsum</span></h3>
+            <h3 className="title is-3">Contact <span>Us</span></h3>
             <hr />
             <address>
               Address : Jl. Lorem Ipsum RT 02/XI <br/>
@@ -58,20 +104,21 @@ class ContactPage extends Component {
           </div>
           <div className="column">
             <h4 className="title is-4">Leave a Comment</h4>
-            <form>
+            <form onSubmit={this.formSubmit.bind(this)}>
               <div className="columns">
                 <div className="column">
-                  <input className="input" type="text" placeholder="Your Name"/>
+                  <input className="input" type="text" placeholder="Your Name" value={sender} onChange={this.handleNameChange.bind(this)} required/>
                 </div>
                 <div className="column">
-                  <input className="input" type="text" placeholder="Your Email"/>
+                  <input className="input" type="email" placeholder="Your Email" value={email} onChange={this.handleEmailChange.bind(this)} required/>
                 </div>
               </div>
               <div className="columns">
                 <div className="column">
-                  <textarea className="textarea" placeholder="Your Comment"></textarea>
+                  <textarea className="textarea" placeholder="Your Comment" value={comment} onChange={this.handleCommentChange.bind(this)} required/>
                 </div>
               </div>
+              <button className="button-service" type="submit">Send</button>
             </form>
           </div>
         </div>
@@ -99,6 +146,7 @@ class ContactPage extends Component {
             }
           </Media>
         </div>
+        <Loader loading={this.state.loading}/>
       </div>
     );
   }

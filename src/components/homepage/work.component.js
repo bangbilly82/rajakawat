@@ -19,6 +19,7 @@ class Work extends Component {
     const { works } = this.state;
     let work;
     work = works.map((item, index) => {
+      console.log(item);
       return (
         <div className="column is-one-third" key={index}>
           <div>
@@ -46,7 +47,7 @@ class Work extends Component {
   generateContent(isMobile = false) {
     return (
       <section className={"work-container " + ((isMobile) ? 'is-mobile' : null)}>
-        <h3 className="title is-3">Lorem <span>Ipsum</span></h3>
+        <h3 className="title is-3">Our <span>Services</span></h3>
         <hr/>
         <div className="columns is-variable is-1 is-multiline">
           {this.generateThumbnail()}

@@ -9,7 +9,7 @@ class WorkflowDetail extends Component {
   generateContent(isMobile = false) {
     return (
       <section className={"workflow-detail-container " + ((isMobile) ? 'is-mobile' : null)}>
-        <h3 className="title is-3">Lorem <span>Ipsum</span></h3>
+        <h3 className="title is-3">Work <span>Flow</span></h3>
         <hr />
         <div className="columns">
           <div className="column">
@@ -17,24 +17,12 @@ class WorkflowDetail extends Component {
               <div className="workflow-list-item">
                 <div className="icon-item">
                   <img src={IconPlan}/>
-                  <span>Lorem</span>
+                  <span>Brief</span>
                 </div>
               </div>
               <div className="workflow-list-item">
                 <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
+                  Sampaikan kebutuhan Anda kepada tim Rajakawat. Kami akan membantu Anda menemukan solusi terbaik bagi kebutuhan Anda. Rajakawat selalu mempertimbangkan keadaan, dan kebutuhan client dalam menentukan solusi yang akan diberikan kepada client
                 </p>
               </div>
             </div>
@@ -42,24 +30,12 @@ class WorkflowDetail extends Component {
               <div className="workflow-list-item">
                 <div className="icon-item">
                   <img src={IconBrief}/>
-                  <span>Lorem</span>
+                  <span>Planning</span>
                 </div>
               </div>
               <div className="workflow-list-item">
                 <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
+                Bersama dengan client, kami akan rencanakan solusi terbaik untuk client. Kami ingin client mendapatkan solusi terbaik yang sesuai dengan kebutuhannya. Akan kami pastikan, dalam tahap perencanaan seluruh kebutuhan, pendapat dan keinginan client akan kami akomodir
                 </p>
               </div>
             </div>
@@ -67,24 +43,12 @@ class WorkflowDetail extends Component {
               <div className="workflow-list-item">
                 <div className="icon-item">
                   <img src={IconWork}/>
-                  <span>Lorem</span>
+                  <span>Pengerjaan</span>
                 </div>
               </div>
               <div className="workflow-list-item">
                 <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
-                </p>
-                <p>
-                A few years ago, Southeast Asian ecommerce skyrocketed beyond precedent. However, with the rise of Lazada, Zalora, and Shopee, a new problem arose – the lack of logistics. Customers needed to get their packages delivered quickly and reliably. Demand just couldn’t cope.
+                Proses pengerjaan akan segera dilakukan setelah poses perencanaan matang. Perencanaan yang matang akan membantu Rajakawat dalam mengerjakan kebutuhan client. Sumber Daya Manusia yang terampil akan memastikan kebutuhan client akan terpenuhi dalam waktu relatif singkat.
                 </p>
               </div>
             </div>

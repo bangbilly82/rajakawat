@@ -1,49 +1,28 @@
 module.exports = {
   works: [
     {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
+      title: 'Kap Baja',
+      description: `Struktur atap menggunakan konstruksi baja yang kuat & ringan`
     },
     {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
+      title: 'Tralis',
+      description: `Konstruksi besi yang berfungsi sebagai pengaman sekaligus hiasan (dekorasi) pada pintu atau jendela.`
     },
     {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
+      title: 'Pagar',
+      description: `Pastikan keamanan rumah Anda terjaga dengan menggunakan pagar yang sesuai dengan design dan bentuk rumah Anda.`
     },
     {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
+      title: 'Kanopi',
+      description: `Atap yang dibuat secara khusus untuk melindungi bagian tertentu rumah yang terletak di luar dari panas / hujan.`
     },
     {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
+      title: 'Railing Tangga',
+      description: `Railing tangga, memberikan keamanan pada tangga dan menambah keindahan dekorasi bangunan`
     },
     {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
-    },
-    {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
-    },
-    {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
-    },
-    {
-      title: 'Lorem Ipsum',
-      description: `Where does it come from?
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old`
+      title: 'Pintu Lipat',
+      description: `Pintu lipat, menjadi salah satu solusi bagi bangunan dengan ukuran ruang relatif kecil.`
     }
   ]
 };

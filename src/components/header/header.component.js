@@ -42,12 +42,12 @@ class Header extends Component {
   }
 
   handleScroll() {
-    if (window.pageYOffset > 150) {
+    if (window.pageYOffset > 5) {
       this.setState({
         color: '#fff',
         isTransparent: false
       });
-    } else if (window.pageYOffset < 150) {
+    } else if (window.pageYOffset < 5) {
       this.setState({
         color: null,
         isTransparent: true

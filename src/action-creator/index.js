@@ -52,5 +52,8 @@ export function getPost() {
         content
       })
     })
+    .catch(err => {
+      throw err;
+    })
   }
 }

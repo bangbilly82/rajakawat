@@ -9,7 +9,7 @@ class Footer extends Component {
         <div className={"footer " + ((isMobile) ? 'is-mobile' : null)}>
           <div className="item">
             <label>Copyright 2018 Raja Kawat</label>
-            <p>Designed by Studibrandinc</p>
+            <p>Designed by Studibrand.inc</p>
           </div>
           <div className="item">
             <label>0271 - 666666</label>
