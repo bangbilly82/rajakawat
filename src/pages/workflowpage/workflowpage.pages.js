@@ -34,8 +34,8 @@ class WorkFlowPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'Startup bags funds from Singapore ex-minister to get ultra-wealthy into crowdlending',
-      text: 'Singapore-based Helicap is a new fintech platform that aims to bring a fund management angle in the peer-to-peer (P2P) lending space. To make this happen, it has raised US$1.5 million in seed funding.'
+      title: 'Rajakawat memiliki mekanisme kerja yang akan memudahkan Anda di dalam setiap pekerjaan.',
+      text: 'Seluruh tahap pengerjaan memastikan kepuasaan pelanggan dan keterlibatan pelanggan di dalam menentukan hasil akhir pengerjaan.'
     }
   }
 

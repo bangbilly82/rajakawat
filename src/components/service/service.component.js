@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import Media from "react-media";
 import WorksHelper from '../../utils/WorksHelper';
 
@@ -13,6 +14,14 @@ class Services extends Component {
 
   handleClick() {
     alert('button clicked');
+  }
+
+  filterByServiceName(service) {
+    const { content } = this.props;
+    const filteredData = _.filter(content, (obj) => {
+      return obj.fields.serviceName.toLowerCase() === service;
+    });
+    return filteredData;
   }
 
   generateThumbnail() {
@@ -43,6 +52,28 @@ class Services extends Component {
     return work;
   }
 
+  generateServiceThumbnail(service, tallerClass = false) {
+    const data = this.filterByServiceName(service);
+    const imageUrl = data[0].fields.thumbnailImage && data[0].fields.thumbnailImage.fields.file.url;
+    const tallerclass = tallerClass ? 'taller' : '';
+    return (
+      <div className={`image-thumbnail ${tallerclass}`}>
+        <img src={imageUrl}/>
+        <div className="title">
+          <h5>{data[0].fields.serviceName}</h5>
+        </div>
+        <div className="description">
+          <p>
+            {data[0].fields.shortDescription}
+          </p>
+          <a className="button-service" href={`/service/detail/${data[0].fields.slug}`}>
+            View Service
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   generateContent(isMobile = false) {
     return (
       <section className={"work-container " + ((isMobile) ? 'is-mobile' : null)}>
@@ -54,176 +85,46 @@ class Services extends Component {
               <div className="tile">
                 <div className="tile is-parent is-vertical">
                   <article className="tile is-child">
-                    <div className="image-thumbnail">
-                      <img src={require(`../../static/images/service/service1.png`)}/>
-                      <div className="title">
-                        <h5>KAP BAJA</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Struktur atap menggunakan konstruksi baja yang kuat & ringan
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('kap baja')}
                   </article>
                   <article className="tile is-child">
-                    <div className="image-thumbnail">
-                      <img src={require(`../../static/images/service/service3.png`)}/>
-                      <div className="title">
-                        <h5>TRALIS</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Konstruksi besi yang berfungsi sebagai pengaman sekaligus hiasan (dekorasi) pada pintu atau jendela.
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('tralis')}
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child">
-                    <div className="image-thumbnail taller">
-                      <img src={require(`../../static/images/service/service7.png`)}/>
-                      <div className="title">
-                        <h5>PAGAR</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Pastikan keamanan rumah Anda terjaga dengan menggunakan pagar yang sesuai dengan design dan bentuk rumah Anda.
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('pagar', true)}
                   </article>
                 </div>
                 <div className="tile is-parent is-vertical">
-                <article className="tile is-child">
-                    <div className="image-thumbnail">
-                      <img src={require(`../../static/images/service/service2.png`)}/>
-                      <div className="title">
-                        <h5>KANOPI</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Atap yang dibuat secara khusus untuk melindungi bagian tertentu rumah yang terletak di luar dari panas / hujan.
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                  <article className="tile is-child">
+                    {this.generateServiceThumbnail('kanopi')}
                   </article>
                   <article className="tile is-child">
-                    <div className="image-thumbnail">
-                      <img src={require(`../../static/images/service/service4.png`)}/>
-                      <div className="title">
-                        <h5>RAILING TANGGA</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Railing tangga, memberikan keamanan pada tangga dan menambah keindahan dekorasi bangunan
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('railing tangga')}
                   </article>
                 </div>
               </div>
               <div className="tile">
                 <div className="tile is-parent is-vertical">
                   <article className="tile is-child">
-                    <div className="image-thumbnail">
-                      <img src={require(`../../static/images/service/service5.png`)}/>
-                      <div className="title">
-                        <h5>PINTU LIPAT</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Pintu lipat, menjadi salah satu solusi bagi bangunan dengan ukuran ruang relatif kecil.
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('pintu lipat')}
                   </article>
                   <article className="tile is-child">
-                    <div className="image-thumbnail">
-                      <img src={require(`../../static/images/service/service6.png`)}/>
-                      <div className="title">
-                        <h5>PINTU DORONG</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Pintu dengan mekanisme dorong (sliding), memberikan kesan lega pada bangunan
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('pintu dorong')}
                   </article>
                 </div>
                 <div className="tile is-parent is-vertical">
                   <article className="tile is-child">
-                    <div className="image-thumbnail">
-                      <img src={require(`../../static/images/service/service2.png`)}/>
-                      <div className="title">
-                        <h5>ORNAMEN TEMPA</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Ornamen dekoratif terbuat dari besi yang dibentuk menggunakan metode tempa
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('ornamen tempat')}
                   </article>
                   <article className="tile is-child">
-                    <div className="image-thumbnail">
-                      <img src={require(`../../static/images/service/service4.png`)}/>
-                      <div className="title">
-                        <h5>KONSOL</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Konsol memiliki fungsi untuk menopang bagian bangunan yang menjorok ke arah luar,seperti balkon.
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('konsol')}
                   </article>
                 </div>
                 <div className="tile is-parent">
                   <article className="tile is-child">
-                    <div className="image-thumbnail taller">
-                      <img src={require(`../../static/images/service/service8.png`)}/>
-                      <div className="title">
-                        <h5>BALKON</h5>
-                      </div>
-                      <div className="description">
-                        <p>
-                          Besi pengaman pada bangunan (outdoor)  yang biasa dipasang pada perbatasan antara dua lantai
-                        </p>
-                        <a className="button-service" href="/service/detail">
-                          View Service
-                        </a>
-                      </div>
-                    </div>
+                    {this.generateServiceThumbnail('balkon', true)}
                   </article>
                 </div>
               </div>

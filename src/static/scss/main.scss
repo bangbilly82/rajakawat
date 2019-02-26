@@ -163,6 +163,14 @@ h1,h2,h3,h4,h5,h6,p,a {
   .button-more {
     margin-top: 2rem;
     text-align: center;
+    .button-service {
+      height: 30px;
+      text-align: center;
+      background: $color-brown;
+      color: $color-white;
+      padding: 10px 1rem;
+      border-radius: 5px;
+    }
   }
   .is-services {
     margin-top: 2rem;
@@ -521,7 +529,7 @@ h1,h2,h3,h4,h5,h6,p,a {
     padding: 2rem;
     margin-top: 80px;
     hr {
-      margin-bottom: 0;
+      margin-bottom: 2rem;
     }
   }
   h3 {
@@ -637,6 +645,7 @@ h1,h2,h3,h4,h5,h6,p,a {
       font-style: normal;
     }
     .button-service {
+      cursor: pointer;
       width: 100px;
       height: 30px;
       text-align: center;

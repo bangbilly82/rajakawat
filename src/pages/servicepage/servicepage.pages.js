@@ -7,7 +7,8 @@ import Services from '../../components/service/service.component';
 
 const mapStateToProps = (state) => {
   return {
-    link: state.header.link
+    link: state.header.link,
+    servicesContent: state.services.content
   };
 };
 
@@ -18,6 +19,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     setHeaderBackground: (background) => {
       dispatch(actionCreators.setHeaderBackground(background));
+    },
+    getServicesContent: () => {
+      dispatch(actionCreators.getServiceContent());
     }
   }
 }
@@ -34,11 +38,21 @@ class ServicePage extends Component {
   componentWillMount() {
     this.props.setCurrentHeader(this.props.location.pathname);
     this.props.setHeaderBackground('transparent');
+    this.props.getServicesContent();
     this.resetScroll();
   }
 
   resetScroll() {
     window.scrollTo(0, 0);
+  }
+
+  generateServices() {
+    const { servicesContent } = this.props;
+    if (servicesContent) {
+      return (
+        <Services content={servicesContent}/>
+      );
+    }
   }
 
   render() {
@@ -47,7 +61,7 @@ class ServicePage extends Component {
         <HeadTag title={'Raja Kawat - Service'}/>
         <div>
           <Hero title={this.state.title} text={this.state.text} alignment="left" background={'homepage-4.png'}/>
-          <Services />
+          {this.generateServices()}
         </div>
       </div>
     );

@@ -32,6 +32,26 @@ export default class Contentful {
     return faqContent;
   }
 
+  static getServiceContent() {
+    const client = this.setClient();
+    const serviceContent = new Promise(
+      function (resolve, reject) {
+        client.getEntries({
+            content_type: 'services',
+            order: '-sys.createdAt',
+            include: 2
+          })
+          .then((entries) => {
+            resolve(entries.items);
+          }, (err) => {
+            var reason = new Error('Error getting data!');
+            reject(reason);
+          });
+      }
+    );
+    return serviceContent;
+  }
+
   static getPostContent() {
     const client = this.setClient();
     const postContent = new Promise(

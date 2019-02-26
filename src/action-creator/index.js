@@ -42,6 +42,19 @@ export function getFaq() {
   }
 }
 
+export function getServiceContent() {
+  return (dispatch) => {
+    Contentful.getServiceContent()
+    .then((res) => {
+      const response = res;
+      dispatch({
+        type: Actions.GET_SERVICES_CONTENT,
+        services: response
+      })
+    })
+  }
+}
+
 export function getPost() {
   return (dispatch) => {
     Contentful.getPostContent()

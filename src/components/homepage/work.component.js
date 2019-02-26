@@ -19,7 +19,6 @@ class Work extends Component {
     const { works } = this.state;
     let work;
     work = works.map((item, index) => {
-      console.log(item);
       return (
         <div className="column is-one-third" key={index}>
           <div>
@@ -39,7 +38,7 @@ class Work extends Component {
             </div>
           </div>
         </div>
-      ); 
+      );
     })
     return work;
   }
@@ -51,6 +50,11 @@ class Work extends Component {
         <hr/>
         <div className="columns is-variable is-1 is-multiline">
           {this.generateThumbnail()}
+        </div>
+        <div className="button-more">
+          <a className="button-service" href="/service">
+            View All Service
+          </a>
         </div>
       </section>
     )

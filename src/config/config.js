@@ -29,6 +29,7 @@ module.exports = {
     }
   ],
   api: {
+    // endpoint: 'http://localhost:8080'
     endpoint: 'http://host.rajakawat.com'
   }
 };

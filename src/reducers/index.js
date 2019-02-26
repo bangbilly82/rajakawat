@@ -3,6 +3,7 @@ import loader from './loader';
 import header from './header';
 import faq from './faq';
 import post from './post';
+import services from './services';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
@@ -10,7 +11,8 @@ const rootReducer = combineReducers({
   loader,
   header,
   faq,
-  post
+  post,
+  services
 });
 
 export default rootReducer;
