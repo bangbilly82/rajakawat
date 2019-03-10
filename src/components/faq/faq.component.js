@@ -5,7 +5,7 @@ import Media from "react-media";
 class Faq extends Component {
 
   generateContent(isMobile = false) {
-    const { title, faqContent: content } = this.props;
+    const { title, content } = this.props;
     return (
       <section className={"faq-detail-container " + ((isMobile) ? 'is-mobile' : null)}>
         <h3 className="title is-3">{title}</h3>

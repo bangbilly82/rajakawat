@@ -54,24 +54,27 @@ class Services extends Component {
 
   generateServiceThumbnail(service, tallerClass = false) {
     const data = this.filterByServiceName(service);
-    const imageUrl = data[0].fields.thumbnailImage && data[0].fields.thumbnailImage.fields.file.url;
-    const tallerclass = tallerClass ? 'taller' : '';
-    return (
-      <div className={`image-thumbnail ${tallerclass}`}>
-        <img src={imageUrl}/>
-        <div className="title">
-          <h5>{data[0].fields.serviceName}</h5>
+    if (!_.isEmpty(data)) {
+      const imageUrl = data[0].fields.thumbnailImage && data[0].fields.thumbnailImage.fields.file.url;
+      const tallerclass = tallerClass ? 'taller' : '';
+      return (
+        <div className={`image-thumbnail ${tallerclass}`}>
+          <img src={imageUrl}/>
+          <div className="title">
+            <h5>{data[0].fields.serviceName}</h5>
+          </div>
+          <div className="description">
+            <p>
+              {data[0].fields.shortDescription}
+            </p>
+            <a className="button-service" href={`/service/detail/${data[0].fields.slug}`}>
+              View Service
+            </a>
+          </div>
         </div>
-        <div className="description">
-          <p>
-            {data[0].fields.shortDescription}
-          </p>
-          <a className="button-service" href={`/service/detail/${data[0].fields.slug}`}>
-            View Service
-          </a>
-        </div>
-      </div>
-    );
+      );
+    }
+    return null;
   }
 
   generateContent(isMobile = false) {
